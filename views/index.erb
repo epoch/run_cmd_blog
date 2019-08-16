@@ -1,0 +1,23 @@
+<h1>hello world</h1>
+
+<div></div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+
+
+  $.ajax({
+    url: '/api/articles'
+  }).done(res => {
+    res.forEach(article => {
+      const elem = document.createElement('h1')
+      elem.textContent = article.title
+      document.querySelector('div').appendChild(elem)
+    })
+  })
+
+
+</script>
