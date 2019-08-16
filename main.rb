@@ -21,9 +21,7 @@ end
 
 get '/api/articles' do
   content_type :json
-  Article.all.map do |a|
-    { title: a.title }
-  end.to_json    
+  Article.all.to_json
 end
 
 
